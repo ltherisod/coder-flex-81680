@@ -18,9 +18,9 @@ const restar= ()=> {
 }
     return(
         <div>
-            <button onClick={restar}>-</button>
-            <span>{count}</span>
-            <button onClick={sumar}>+</button>
+            <button className="btn btn-danger" onClick={restar}>-</button>
+            <span className="btn">{count}</span>
+            <button className="btn btn-success" onClick={sumar}>+</button>
         </div>
     )
 }

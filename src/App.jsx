@@ -1,10 +1,12 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from './components/ItemCount'
 import ItemListContainer from './components/ItemListContainer'
 
 //import el componente arriba del componente
 // import BotonMultiuso from "./examples/BotonMultiuso"
 import NavBar from "./components/NavBar"
+import NavBarBS from './components/NavBarBS';
 
 function App() {
 
@@ -20,7 +22,8 @@ function App() {
 console.log('App')
   return (
     <>
-    <NavBar/>
+    {/* <NavBar/> */}
+    <NavBarBS/>
     <ItemListContainer mensaje='Bienvenidos a mi shop! 🥳'/>
     {/* NO ENTRA EN LA PRIMER PRE ENTREGA EL ITEMCount */}
     <ItemCount stock={10}/>
