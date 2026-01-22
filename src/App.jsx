@@ -14,7 +14,7 @@ console.log('App')
     <NavBarBS/>
     <ItemListContainer mensaje='Bienvenidos a mi shop! 🥳'/>
     {/* NO ENTRA EN LA PRIMER PRE ENTREGA EL ITEMCount */}
-    <ItemCount stock={10}/>
+    {/* <ItemCount stock={10}/> */}
      
     </>
  
