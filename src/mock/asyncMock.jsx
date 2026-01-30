@@ -51,3 +51,18 @@ export const getProducts = ()=> {
         },3000)
     })
 }
+
+
+export const getOneProduct = (id)=> {
+    return new Promise ((resolve, reject)=>{
+        setTimeout(()=>{
+            if(error){
+                reject('El producto no existe')
+            }else{
+                // resolve(productos[1])//harcodeado
+                let product = productos.find((prod)=> prod.id === id)
+                resolve(product)
+            }
+        },2000)
+    })
+}

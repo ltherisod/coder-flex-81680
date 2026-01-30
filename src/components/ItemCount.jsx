@@ -21,40 +21,40 @@ const purchase = ()=> {
     setComprar(!comprar)
 }
 
-//SE EJECUTA SIEMPRE
-useEffect(()=>{
-    //CODIGO
-    //CASI NUNCA / NUNCA
-    console.log('Me ejecuto SIEMPRE')
-})
+// //SE EJECUTA SIEMPRE
+// useEffect(()=>{
+//     //CODIGO
+//     //CASI NUNCA / NUNCA
+//     console.log('Me ejecuto SIEMPRE')
+// })
 
 
-//SE EJECUTE UNA SOLA VEZ
+// //SE EJECUTE UNA SOLA VEZ
 
-useEffect(()=>{
-    //CODIGO
-    //CASI SIEMPRE
-    console.log('ME EJECUTO UNA SOLA VEZ, CUANDO SE MONTA EL COMPONENTE')
-},[])
-
-
-//SE EJETUTE UNA SOLA VEZ Y QUE ESTE A LA ESCUCHA DE UN CAMBIO
-
-useEffect(()=>{
-    //CODIGO
-    //CASI SIEMPRE
-    console.log('ME EJECUTO UNA SOLA VEZ, CUANDO SE MONTA EL COMPONENTE Y SIEMPRE QUE COMPRAR CAMBIE', comprar)
-},[comprar])
+// useEffect(()=>{
+//     //CODIGO
+//     //CASI SIEMPRE
+//     console.log('ME EJECUTO UNA SOLA VEZ, CUANDO SE MONTA EL COMPONENTE')
+// },[])
 
 
-useEffect(()=>{
-    //CODIGO
-    //CASI NUNCA
-    console.log('con eventListener')
-    return()=>{
-        console.log('efecto de limpieza')
-    }
-},[])
+// //SE EJETUTE UNA SOLA VEZ Y QUE ESTE A LA ESCUCHA DE UN CAMBIO
+
+// useEffect(()=>{
+//     //CODIGO
+//     //CASI SIEMPRE
+//     console.log('ME EJECUTO UNA SOLA VEZ, CUANDO SE MONTA EL COMPONENTE Y SIEMPRE QUE COMPRAR CAMBIE', comprar)
+// },[comprar])
+
+
+// useEffect(()=>{
+//     //CODIGO
+//     //CASI NUNCA
+//     console.log('con eventListener')
+//     return()=>{
+//         console.log('efecto de limpieza')
+//     }
+// },[])
 
 
     return(
