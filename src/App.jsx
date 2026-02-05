@@ -1,9 +1,10 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemCount from './components/ItemCount'
 import ItemListContainer from './components/ItemListContainer'
 import NavBarBS from './components/NavBarBS';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Error from './components/Error';
 
 function App() {
 
@@ -11,12 +12,16 @@ function App() {
   
 console.log('App')
   return (
-    <>
-   
+    <BrowserRouter>
     <NavBarBS/>
-    <ItemListContainer mensaje='Bienvenidos a mi shop! 🥳'/>
-    <ItemDetailContainer/>
-    </>
+    <Routes>
+      <Route path='/' element={<ItemListContainer mensaje='Bienvenidos a mi shop! 🥳'/>}/>
+      <Route path='/category/:type' element={<ItemListContainer mensaje='Estas en la categoría '/>}/>
+      <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+      <Route path='*' element={<Error/>}/>
+    </Routes>
+
+    </BrowserRouter>
  
   )
 }

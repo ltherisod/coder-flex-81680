@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { getProducts } from "../mock/asyncMock"
 import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({mensaje})=>{
     const [data, setData]= useState([])
-    console.log('ItemListContainer')
+    const {type} = useParams()
+    console.log(type)
     // const {mensaje}=props
 
     // console.log(getProducts(), 'promesa')
@@ -12,14 +14,21 @@ const ItemListContainer = ({mensaje})=>{
 
     useEffect(()=> {
         getProducts()
-        .then((res)=> setData(res))
+        .then((res)=> {
+            if(type){
+                //filtrar
+                setData(res.filter((prod)=> prod.category === type))
+            }else{
+                setData(res)
+            }
+        })
         .catch((error)=> console.error(error))
-    },[])
+    },[type])
 
-    console.log(data)
+    // console.log(data)
     return(
         <div>
-            <h1>{mensaje}</h1>
+            <h1>{mensaje}{type && <span style={{textTransform:'capitalize'}}>{type}</span>}</h1>
             {/* {data.map((producto)=> <p key={producto.id}>{producto.name}</p>)} */}
             <ItemList data={data}/>
         </div>
