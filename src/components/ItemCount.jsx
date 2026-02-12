@@ -45,7 +45,7 @@ const purchase = ()=> {
   {/* <button className="btn btn-primary buy-btn" onClick={purchase}>
     Comprar
   </button> */}
-   <button className="btn btn-primary buy-btn" onClick={()=>onAdd(count)}>
+   <button className="btn btn-primary buy-btn" onClick={()=>onAdd(count)} disabled={count === 0 || stock === 0}>
     Comprar
   </button>
 </div>

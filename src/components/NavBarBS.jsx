@@ -5,9 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidgetRI from './CartWidgetRI';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 function NavBarBS() {
-  console.log('Navbar')
+  const{cart} =useContext(CartContext)
+  console.log('Navbar', cart)
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -28,7 +31,7 @@ function NavBarBS() {
               <NavDropdown.Item as={NavLink} to='/category/ofertas'>Ofertas</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-        <CartWidgetRI/>
+      <NavLink style={{textDecoration:'none', color:'black'}} to='/cart'> <CartWidgetRI/></NavLink>  
         </Navbar.Collapse>
       </Container>
     </Navbar>
