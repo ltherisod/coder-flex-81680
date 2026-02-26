@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 
 //creacion del contexto(cajita)
 export const CartContext = createContext()
-
+const carritoLS = JSON.parse(localStorage.getItem('carrito')) || []
 //creacion del proveedor(envolver y dar acceso a las herramientas)
 export const CartProvider = ({children})=>{
-    const [cart, setCart]=useState([])
+    const [cart, setCart]=useState(carritoLS)
+
+    useEffect(()=>{
+        localStorage.setItem('carrito', JSON.stringify(cart))
+    },[cart])
 
     //herramientas (funciones y datos)
 

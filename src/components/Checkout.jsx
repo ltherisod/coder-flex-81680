@@ -22,7 +22,6 @@ const buyerData = (e)=> {
         }
     )
 }
-   console.log(buyer)
 const terminarCompra = (e)=> {
     e.preventDefault()
     if(!buyer.name || ! buyer.lastname || !buyer.mail || !buyer.address || !secondMail){

@@ -10,10 +10,9 @@ const ItemDetailContainer = () => {
  const[detail, setDetail]= useState({})
  const [cargando, setCargando]= useState(true)
  const [invalid, setInvalid]= useState(null)
-  // const param= useParams()
-  // console.log(param)
+
    const{id}= useParams()
-  // console.log(id)
+  
   useEffect(()=>{
         const docRef= doc(db, "productos", id)
         //traer el doc
@@ -29,13 +28,7 @@ const ItemDetailContainer = () => {
         .finally(()=> setCargando(false))
     },[id])
 
-  //PROMESA
-    // useEffect(()=>{
-    //     getOneProduct(id)
-    //     .then((res)=> setDetail(res))
-    //     .catch((err)=> console.log(err))
-    //     .finally(()=> setCargando(false))
-    // },[id])
+  
   if(invalid){
     return(
       <div>

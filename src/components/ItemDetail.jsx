@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import ItemCount from './ItemCount'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 const ItemDetail = ({detail}) => {
@@ -9,9 +10,16 @@ const ItemDetail = ({detail}) => {
   const [purchase, SetPurchase]= useState(false)
 
   const onAdd = (cantidad)=>{
-    console.log(`Agregaste del  ${detail.name},  ${cantidad} unidades`)
     addItem(detail, cantidad)
     SetPurchase(true)
+    Swal.fire({
+      position:'top-end',
+      icon:'success',
+      title:`Agregaste ${detail.name} a tu carrito`,
+      showCancelButton:false,
+      showConfirmButton:false,
+      timer:1000
+    })
   }
   return (
     <div style={{
